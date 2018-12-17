@@ -55,9 +55,9 @@
                   </span>
                 {% endif %}
                 {# Need to delete maybe? #}
-                {{ next_url(url_for(post.path), post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: url }) }}
+                {{ next_url(url_for(post.path), post.showTitle | default(__('post.untitled')), {class: 'post-title-link', itemprop: url }) }}
               {% else -%}
-                {{- post.title -}}
+                {{- post.showTitle -}}
                 {% if theme.post_edit.enable -%}
                   {% set editIcon = '<i class="fa fa-pencil"></i>' -%}
                   {{ next_url(theme.post_edit.url + post.source.slice(7), editIcon, {class: 'post-edit-link', title: __('post.edit') }) }}
@@ -360,9 +360,9 @@
     {% endif %}
 
     {% if page.reward === undefined and theme.reward.enable %}
-      {% set reward_able = true %} 
+      {% set reward_able = true %}
     {% else %}
-      {% set reward_able = page.reward %} 
+      {% set reward_able = page.reward %}
     {% endif %}
     {% if reward_able and (theme.reward.alipay or theme.reward.wechatpay or theme.reward.bitcoin) and not is_index %}
       <div>
@@ -440,8 +440,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             {% if post.next %}
-              <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}">
-                <i class="fa fa-chevron-left"></i> {{ post.next.title }}
+              <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.showTitle }}">
+                <i class="fa fa-chevron-left"></i> {{ post.next.showTitle }}
               </a>
             {% endif %}
           </div>
@@ -450,8 +450,8 @@
 
           <div class="post-nav-prev post-nav-item">
             {% if post.prev %}
-              <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">
-                {{ post.prev.title }} <i class="fa fa-chevron-right"></i>
+              <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.showTitle }}">
+                {{ post.prev.showTitle }} <i class="fa fa-chevron-right"></i>
               </a>
             {% endif %}
           </div>
