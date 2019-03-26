@@ -7,7 +7,7 @@ imagemin = require('gulp-imagemin');
 
 // 压缩 public 目录内 css
 gulp.task('minify-css', function() {
-  return gulp.src('./public/**/*.css')
+  return gulp.src('./public/css/*.css')
     .pipe(minifycss({
       advanced: true,//类型：Boolean 默认：true [是否开启高级优化（合并选择器等）]
       compatibility: 'ie7',//保留ie7及以下兼容写法 类型：String 默认：''or'*' [启用兼容模式； 'ie7'：IE7兼容模式，'ie8'：IE8兼容模式，'*'：IE9+兼容模式]
@@ -27,8 +27,8 @@ gulp.task('minify-html', function() {
       collapseWhitespace: true,//压缩 HTML
       collapseBooleanAttributes: true,//省略布尔属性的值 <input checked="true"/> ==> <input />
       removeEmptyAttributes: true,//删除所有空格作属性值 <input id="" /> ==> <input />
-      removeScriptTypeAttributes: true,//删除 <script> 的 type="text/javascript"
-      removeStyleLinkTypeAttributes: true,//删除 <style> 和 <link> 的 type="text/css"
+      removeScriptTypeAttributes: false,//删除 <script> 的 type="text/javascript"
+      removeStyleLinkTypeAttributes: false,//删除 <style> 和 <link> 的 type="text/css"
       minifyJS: true,//压缩页面 JS
       minifyCSS: true//压缩页面 CSS
     }))
