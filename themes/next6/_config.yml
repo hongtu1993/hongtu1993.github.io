@@ -573,7 +573,7 @@ gitalk:
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-#baidushare:
+baidushare: true
 ##  type: button
 
 # addthis Share, see: https://www.addthis.com
@@ -695,7 +695,7 @@ firestore:
 # Show Views/Visitors of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: false
+  enable: true
   total_visitors: true
   total_visitors_icon: user
   total_views: true
@@ -708,7 +708,7 @@ busuanzi_count:
 # tencent_analytics:
 
 # Tencent MTA ID
-# tencent_mta:
+tencent_mta: 500676028
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
