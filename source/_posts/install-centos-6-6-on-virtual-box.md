@@ -68,4 +68,28 @@ vi /etc/sysconfig/network-scripts/ifcfg-eth0
 service network restart
 ```
 
-## 安装JDK8
+## Q&A
+
+### 克隆虚拟机后配置ip
+网上有很多种配置ip的方法, 但是都比较麻烦, 个人经验整理的一个超级简单的方法, 主要操作两个步骤(第3点, 第5点)就可以重新设置克隆后的虚拟机静态ip
+
+> 注意: 请勿在生成环境中使用改方法. 如果是学习, 而且在本地的虚拟机中, 方可用该方法去设置ip    
+
+1. 首先在虚拟器中, 选择一个克隆对象(以Oracle VM VirtualBox为例), 前提是克隆对象已经设置过静态ip(已经获得静态Ip, 设置静态ip方法请之前的说明)
+    ![](http://qiniu.maoyupeng.club/15565185687770.jpg)
+2. 克隆前需要定义一个示例名称, 然后一路next...
+    ![](http://qiniu.maoyupeng.club/15565196499379.jpg)
+    
+    ![](http://qiniu.maoyupeng.club/15565187553409.jpg)
+    
+    ![](http://qiniu.maoyupeng.club/15565187697069.jpg)
+3. 启动虚拟服务器, 然后执行以下命令后, 再重启
+
+    ```bash
+       # 删除rules文件 
+       rm -Rf /etc/udev/rules.d/70-persistent-net.rules
+       
+       reboot
+    ```
+4. 重启完成后, 使用vi命令, 编辑rules文件(主要不是编辑), 内容中, 找到name为eth0的行记录, 并且把ATTR{address}对应的值记录下来
+5. 修改ifcfg-eth0文件中,对应的HWADDR值, 并重启网络服务, 就可以获得静态ip

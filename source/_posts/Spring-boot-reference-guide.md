@@ -6,7 +6,9 @@ subtitle:
 showTitle: Springboot1.3.0参考指南
 description: 本节提供一个Spring Boot参考文档的简明概述。你可以把它作为文档其余部分的导航。你可以从头到尾依次阅读该参考指南，或跳过你不感兴趣的章节。
 tags:
+    - spring boot
 categories:
+    - spring
 ---
 
 ## 介绍
