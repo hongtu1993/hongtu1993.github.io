@@ -4,3 +4,6 @@ db.json
 *.log
 node_modules/
 .deploy*/
+*.lock
+
+node_modules*
