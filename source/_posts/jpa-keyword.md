@@ -3,7 +3,7 @@ title: jpa keyword
 author: 毛宇鹏
 date: 2020-03-31 14:12:40
 showTitle: jpa关键字与sql对比
-description:
+description: jpa 关键字, 函数 与 sql对比
 tags:
     - jpa
     - sql
