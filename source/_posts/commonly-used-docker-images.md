@@ -62,11 +62,12 @@ datadir         = /var/lib/mysql
 symbolic-links=0
 
 max_allowed_packet=40M
+innodb_log_file_size=256M
 ```
 
 #### 参考命令
 
 * 启动：`docker-compose -f mysql-compose.yml up -d`
-* 停止：`docker-compose -f mysql-compose.yml down`
+* 停止：`docker-compose -f mysql-compose.yml stop`
 
 
