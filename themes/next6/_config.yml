@@ -86,7 +86,7 @@ footer:
     enable: true
     # Version info of NexT after scheme info (vX.X.X).
     version: true
-    text: 粤ICP备18038345号-1
+    text: <a href="https://beian.miit.gov.cn/#/Integrated/index"  target="_blank">粤ICP备18038345号-1</a>
   # -------------------------------------------------------------
   # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
   # http://www.miitbeian.gov.cn
