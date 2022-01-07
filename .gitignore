@@ -6,6 +6,8 @@ node_modules/
 .deploy*/
 *.lock
 
+.idea/**
+
 node_modules*
 
 db**.json
