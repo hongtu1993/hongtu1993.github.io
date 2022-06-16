@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>SpringCloud领域驱动设计(DDD)</title>
+    <url>/f2b646a9.html</url>
+    <content><![CDATA[<blockquote>
+<p>此文章主要记录作者在学习领域驱动设计理念时，通过SpringCloud Alibaba + Nacos + Gateway + Oauth2实现一套基础企业级开发脚手架”框架”（其实不算框架）。</p>
+</blockquote>
+<p><code>注意，该系列文章不是教程，而是笔记，仅供参考。有兴趣的朋友，或邮箱联系我，给出建议，我们互相交流和学习。</code></p>
+<span id="more"></span>
+
+<h2 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h2><table>
+<thead>
+<tr>
+<th align="left">文章名称</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">拟定需求</td>
+<td align="left">做什么事情，没有需求或者明确的方向，也许会耗费很多时间去思考，所以先要有需求</td>
+</tr>
+<tr>
+<td align="left">数据库设计</td>
+<td align="left">通过需求，简单设计下数据库，因为有了仓储层，才能完整地实现DDD的设计过程</td>
+</tr>
+</tbody></table>
+<p>原文地址：<a href="https://www.maoyupeng.club/f2b646a9.html">https://www.maoyupeng.club/f2b646a9.html</a></p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ul>
+<li>todo…</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li>xxx todo…</li>
+</ul>
+<p>将会持续更新 todo….</p>
+]]></content>
+      <categories>
+        <category>领域驱动设计实践过程</category>
+      </categories>
+      <tags>
+        <tag>SpringCloud</tag>
+        <tag>Nacos</tag>
+        <tag>DDD</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MacOS系统中我常用的软件</title>
+    <url>/ade60807.html</url>
+    <content><![CDATA[<p>将会持续更新 todo…</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>macbook</category>
+      </categories>
+      <tags>
+        <tag>apps</tag>
+        <tag>MacOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>openssl一键生成pem和der证书</title>
+    <url>/a6c08cb4.html</url>
+    <content><![CDATA[<p>由于通过手打命令生成证书，比较容易出错，导致证书损坏或者不可用的情况，所以将生成证书的相关命令，整理成一个可执行的shell脚本，可快捷地生成正确的密钥对，把更多的时间投入到业务开发上。</p>
+<span id="more"></span>
+
+<h2 id="下载shell脚本文件"><a href="#下载shell脚本文件" class="headerlink" title="下载shell脚本文件"></a>下载shell脚本文件</h2><p>将下面的代码，完整不漏的拷贝，用文本编辑器另存为文件名叫<code>openssl-generate.sh</code>的文件（文件名可以随意修改，但是执行脚本时，文件名称要写对）。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">PASS=</span><br><span class="line"><span class="function"><span class="title">Init_Selection</span></span>() &#123;</span><br><span class="line">    clear</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;+------------------------------------------------------------------------+&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;|                       _ _  _  _        _  _  _  _                    |&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;|                      / / //_|/_//_//_//_//_&#x27;/ //_/                   |&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;|                                 _/   /         _/                    |&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;+------------------------------------------------------------------------+&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;|                            openssl证书生成脚本v1.0                      |&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;+------------------------------------------------------------------------+&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;|                         https://www.maoyupeng.club                     |&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;+------------------------------------------------------------------------+&quot;</span></span><br><span class="line">    </span><br><span class="line">    Echo_Green <span class="string">&quot;请输入证书密码&quot;</span></span><br><span class="line">    <span class="built_in">read</span> -p <span class="string">&quot;Password:&quot;</span> PASS</span><br><span class="line">    action_build </span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">action_build</span></span>() </span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;创建AES256加密密钥...&quot;</span></span><br><span class="line">    openssl genrsa -passout pass:<span class="variable">$&#123;PASS&#125;</span> -out rsa_aes_private.pem 2048</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;生成公钥...&quot;</span></span><br><span class="line">    openssl rsa -<span class="keyword">in</span> rsa_aes_private.pem -passin pass:<span class="variable">$&#123;PASS&#125;</span> -pubout -out rsa_public.pem</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;PEM私钥转DER...&quot;</span></span><br><span class="line">    openssl rsa -<span class="keyword">in</span> rsa_aes_private.pem -passin pass:<span class="variable">$&#123;PASS&#125;</span> -out rsa_private_key.der -outform der</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;PEM公钥转DER...&quot;</span></span><br><span class="line">    openssl rsa -<span class="keyword">in</span> rsa_public.pem -out rsa_public_key.der -pubin -outform der</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Finish!&quot;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">Echo_Green</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">echo</span> $(Color_Text <span class="string">&quot;<span class="variable">$1</span>&quot;</span> <span class="string">&quot;32&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">Echo_Yellow</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">echo</span> $(Color_Text <span class="string">&quot;<span class="variable">$1</span>&quot;</span> <span class="string">&quot;33&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Init_Selection</span><br></pre></td></tr></table></figure>
+
+<h2 id="赋予脚本文件权限"><a href="#赋予脚本文件权限" class="headerlink" title="赋予脚本文件权限"></a>赋予脚本文件权限</h2><p>执行以下命令，赋予脚本文件755权限。</p>
+<p>注意，建议脚本保存到一个新建的文件夹内，因为执行生成证书后，证书会输出到同目录，避免文件太多时，找不到证书。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo chmod -R 755 ./openssl-generate.sh</span><br></pre></td></tr></table></figure>
+
+<p><img src="/a6c08cb4/file-permission.png"></p>
+<h2 id="执行脚本并生成证书"><a href="#执行脚本并生成证书" class="headerlink" title="执行脚本并生成证书"></a>执行脚本并生成证书</h2><p>执行脚本后，会提示输入证书的密码（这里公钥密钥的密码都统一为您输入的密码）。</p>
+<p><img src="/a6c08cb4/input-password.png"></p>
+<p>输入密码后，等待片刻，就会在执行脚本的同目录输出证书文件，可参考下图</p>
+<p><img src="/a6c08cb4/finish.png"></p>
+]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>ssl</tag>
+        <tag>pem</tag>
+        <tag>der</tag>
+        <tag>openssl</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MacOS M1 快速搭建Java开发环境</title>
+    <url>/b5436530.html</url>
+    <content><![CDATA[<blockquote>
+<p>前言：本人从事后端Java开发，和偶尔前端开发工作。</p>
+</blockquote>
+<p><img src="/b5436530/macbook.png"></p>
+<p>最近入手了2021款的Macbook M1 Max型号的笔记本电脑，由于M1芯片是基于ARM架构研发的，所以平时都是使用x86架构的芯片，上手会有那么一点不适应。<code>（怎么JDK没有ARM版本？怎么Docker启动的容器会有警告或直接启动失败？）</code></p>
+<p>因此通过此文章，记录下我的环境搭建过程。    </p>
+<span id="more"></span>
+
+<h2 id="JDK安装"><a href="#JDK安装" class="headerlink" title="JDK安装"></a>JDK安装</h2><p>通过 <a href="https://www.azul.com/downloads/?version=java-8-lts&os=macos&architecture=arm-64-bit&package=jdk">Zulu官方网站</a> 生成您需要的JDK版本，并且下载<code>.dmg</code>安装文件，直接双击安装即可。Zulu是基于OpenJDK构建的，请放心使用，不会有版权问题。</p>
+<p><img src="/b5436530/zulu-jdk.png"></p>
+<p>安装成功后，可以通过命令<code>java -version</code>检查是否安装成功，如输出类似下图信息，即表示安装成功。</p>
+<p><img src="/b5436530/check-jdk-version.png"></p>
+<h2 id="Docker-Compose-搭建开发环境"><a href="#Docker-Compose-搭建开发环境" class="headerlink" title="Docker Compose 搭建开发环境"></a>Docker Compose 搭建开发环境</h2><p>我比较常用的开发环境分别有<code>Mysql</code>、<code>Redis</code>和<code>Nacos</code>。所以我整理了一个Docker Compose文件，通过docker帮我完成并就绪开发环境。</p>
+<p>持续更新 todo…</p>
+]]></content>
+      <categories>
+        <category>macbook</category>
+      </categories>
+      <tags>
+        <tag>MacOS</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+</search>
