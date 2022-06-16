@@ -23,8 +23,14 @@ categories:
 | 拟定需求  | 做什么事情，没有需求或者明确的方向，也许会耗费很多时间去思考，所以先要有需求 |
 | 数据库设计 | 通过需求，简单设计下数据库，因为有了仓储层，才能完整地实现DDD的设计过程  |
 
+原文地址：[https://www.maoyupeng.club/f2b646a9.html](https://www.maoyupeng.club/f2b646a9.html)
+
 ## 常见问题
 
-1. todo
+* todo...
+
+## 参考资料
+
+* xxx todo...
 
 将会持续更新 todo....
