@@ -6,16 +6,17 @@
 title: 毛宇鹏
 subtitle: '问题空间问题解决战士'
 description: '一个懒惰的java工程师'
-keywords: java 毛宇鹏 java工程师 spring springboot springcloud html vue
+keywords: java 毛宇鹏 java工程师 spring springboot springcloud oauth2 html vue
 author: 毛宇鹏
 language: en
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://www.maoyupeng.club
 # permalink: :year/:month/:day/:title/
 permalink: :abbrlink.html
+
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -41,7 +42,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:

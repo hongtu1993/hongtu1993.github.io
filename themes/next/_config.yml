@@ -52,7 +52,7 @@ language_switcher: false
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  #since: 2015
+  since: 2018
 
   # Icon between year and copyright info.
   icon:
@@ -72,7 +72,7 @@ footer:
   # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
   beian:
     enable: false
-    icp:
+    icp: 粤ICP备18038345号-1
     # The digit in the num of gongan beian.
     gongan_id:
     # The full num of gongan beian.
@@ -138,8 +138,8 @@ menu_settings:
 
 sidebar:
   # Sidebar Position.
-  position: left
-  #position: right
+#  position: left
+  position: right
 
   # Manual define the sidebar width. If commented, will be default for:
   # Muse | Mist: 320
@@ -214,16 +214,17 @@ toc:
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   expand_all: false
   # Maximum heading depth of generated toc.
-  max_depth: 6
+  max_depth: 3
 
 # A button to open designated chat widget in sidebar.
 # Firstly, you need enable the chat service you want to activate its sidebar button.
 chat:
-  enable: false
+  enable: true
   #service: chatra
   #service: tidio
-  icon: fa fa-comment # Icon name in Font Awesome, set false to disable icon.
-  text: Chat # Button text, change it as you wish.
+  # icon: fa fa-comment # Icon name in Font Awesome, set false to disable icon.
+  icon: false # Icon name in Font Awesome, set false to disable icon.
+  text: Email：hongtu1993@sina.cn # Button text, change it as you wish.
 
 
 # ---------------------------------------------------------------
@@ -252,7 +253,7 @@ post_meta:
 symbols_count_time:
   separated_meta: true
   item_text_post: true
-  item_text_total: false
+  item_text_total: true
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: false
@@ -261,13 +262,13 @@ tag_icon: false
 # Front-matter variable (unsupport animation).
 reward_settings:
   # If true, reward will be displayed in every article by default.
-  enable: false
+  enable: true
   animation: false
-  #comment: Donate comment here.
+  # comment: 原创技术分享，您的支持将鼓励我继续创作
 
 reward:
-  #wechatpay: /images/wechatpay.png
-  #alipay: /images/alipay.png
+  wechatpay: /images/wechatpay.jpg
+  alipay: /images/alipay.jpg
   #paypal: /images/paypal.png
   #bitcoin: /images/bitcoin.png
 
@@ -276,7 +277,7 @@ reward:
 follow_me:
   #Twitter: https://twitter.com/username || fab fa-twitter
   #Telegram: https://t.me/channel_name || fab fa-telegram
-  #WeChat: /images/wechat_channel.jpg || fab fa-weixin
+#  WeChat: /images/wechat_channel.jpg || fab fa-weixin
   #RSS: /atom.xml || fa fa-rss
 
 # Related popular posts
